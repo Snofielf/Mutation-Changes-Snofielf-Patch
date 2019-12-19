@@ -367,6 +367,13 @@
         "mixed_effect" : true,
         "description" : "Your mouth and nose have formed into a beak.  You can occasionally use it to peck at your enemies, but it is impossible for you to wear mouth gear.  Slightly reduces wet effects.",
         "cancels" : ["FANGS", "MANDIBLES", "SABER_TEETH", "PROBOSCIS", "RAZOR_TEETH", "SNOUT",  "MOUTH_TENTACLES", "MOUTH_FLAPS", "MUZZLE_LONG", "MUZZLE_SNAPPER", "MUZZLE", "MUZZLE_CHIMERA", "MUZZLE_BEAR", "MINOTAUR"],
+"attacks": {
+      "attack_text_u": "You peck %s",
+      "attack_text_npc": "%1$s pecks %2$s",
+      "body_part": "MOUTH",
+      "chance": 15,
+      "base_damage": { "damage_type": "stab", "amount": 15 }
+},
         "changes_to" : ["BEAK_HUM", "BEAK_PECK"]
     },{
         "type" : "mutation",
@@ -874,6 +881,12 @@
         "valid" : false,
         "cancels" : ["LEG_TENTACLES", "HOOVES", "ROOTS1", "ROOTS2", "ROOTS3", "HOOF_TALON", "WEBBED"],
         "restricts_gear" : [ "FOOT_L", "FOOT_R" ],
+"attacks": {
+      "attack_text_u": "You slash %s with a talon",
+      "attack_text_npc": "%1$s slashes %2$s with a talon",
+      "chance": 20,
+      "strength_damage": { "damage_type": "cut", "amount": 4 }
+    },
         "destroys_gear" : true
     },{
         "type" : "mutation",
@@ -892,6 +905,12 @@
         ],
         "restricts_gear" : [ "FOOT_L", "FOOT_R" ],
         "destroys_gear" : true,
+"attacks": {
+      "attack_text_u": "You kick %s with your hooves",
+      "attack_text_npc": "%1$s kicks %2$s with their hooves",
+      "chance": 15,
+      "strength_damage": { "damage_type": "bash", "amount": 3 }
+    },
         "armor" : [ { "parts" : [ "FOOT_L", "FOOT_R" ], "bash" : 6, "cut" : 6 } ]
     },{
         "type" : "mutation",
@@ -1292,7 +1311,15 @@
         "cancels" : ["BEAK", "BEAK_HUM", "BEAK_PECK", "PROBOSCIS", "MUZZLE", "MINOTAUR", "MUZZLE_RAT", "MUZZLE_BEAR", "MUZZLE_SNAPPER", "MOUTH_TENTACLES", "MANDIBLES", "MUZZLE_LONG", "FLOWER_HEAD", "FANGS_SPIDER"],
         "prereqs" : ["SNOUT"],
         "category" : ["MUTCAT_RAPTOR"],
-		"leads_to" : ["RAPTOR_BODY"],			
+		"leads_to" : ["RAPTOR_BODY"],
+		"attacks": {
+      "attack_text_u": "You nip at %s",
+      "attack_text_npc": "%1$s nips and harries %2$s",
+      "blocker_mutations": [ "FANGS" ],
+      "body_part": "MOUTH",
+      "chance": 20,
+      "base_damage": { "damage_type": "cut", "amount": 12 }
+    },	
         "restricts_gear" : [ "MOUTH" ]
     },{	
         "type" : "mutation",
@@ -1306,6 +1333,14 @@
         "cancels" : ["BEAK", "BEAK_HUM", "BEAK_PECK", "PROBOSCIS", "MINOTAUR", "MUZZLE_LONG", "MUZZLE_RAT", "MUZZLE_BEAR", "MUZZLE_SNAPPER", "MOUTH_TENTACLES", "MANDIBLES", "MUZZLE_RAPTOR", "FLOWER_HEAD", "FANGS_SPIDER"],
         "prereqs" : ["SNOUT"],
         "changes_to" : ["MUZZLE_CHIMERA", "MUZZLE_BEAST"],
+"attacks": {
+      "attack_text_u": "You nip at %s",
+      "attack_text_npc": "%1$s nips and harries %2$s",
+      "blocker_mutations": [ "FANGS" ],
+      "body_part": "MOUTH",
+      "chance": 18,
+      "base_damage": { "damage_type": "cut", "amount": 10 }
+    },
         "restricts_gear" : [ "MOUTH" ]
     },{
         "type" : "mutation",
@@ -1340,7 +1375,15 @@
         "cancels" : ["BEAK", "BEAK_HUM", "BEAK_PECK", "PROBOSCIS", "MINOTAUR", "MUZZLE_LONG", "MUZZLE_RAT", "MUZZLE", "MUZZLE_SNAPPER", "MOUTH_TENTACLES", "MANDIBLES", "MUZZLE_RAPTOR", "MUZZLE_BEAST", "FLOWER_HEAD", "FANGS_SPIDER"],
         "prereqs" : ["SNOUT"],
         "leads_to" : ["URSINE_BODY"],		
-        "changes_to" : ["MUZZLE_CHIMERA"],		
+        "changes_to" : ["MUZZLE_CHIMERA"],
+"attacks": {
+      "attack_text_u": "You nip at %s",
+      "attack_text_npc": "%1$s nips and harries %2$s",
+      "blocker_mutations": [ "FANGS" ],
+      "body_part": "MOUTH",
+      "chance": 20,
+      "base_damage": { "damage_type": "cut", "amount": 12 }
+    },		
         "restricts_gear" : [ "MOUTH" ]
     },{
         "type" : "mutation",
@@ -1364,7 +1407,16 @@
         "description" : "Your face and jaws have extended outwards causing you to resemble some kind of crocodilian.  They look NASTY - as do the bite wounds they can inflict - but prevent you from wearing mouthgear.",
         "cancels" : ["BEAK", "BEAK_HUM", "BEAK_PECK", "PROBOSCIS", "MUZZLE", "MINOTAUR", "MUZZLE_RAT", "MUZZLE_BEAR", "MUZZLE_SNAPPER", "MOUTH_TENTACLES", "MANDIBLES", "MUZZLE_RAPTOR", "MUZZLE_BEAST", "FLOWER_HEAD", "FANGS_SPIDER"],
         "prereqs" : ["SNOUT"],
-        "changes_to" : ["MUZZLE_CHIMERA"],		
+        "changes_to" : ["MUZZLE_CHIMERA"],
+        "attacks": {
+      "attack_text_u": "You bite a chunk out of %s",
+      "attack_text_npc": "%1$s bites a chunk out of %2$s",
+      "blocker_mutations": [ "FANGS" ],
+      "body_part": "MOUTH",
+      "chance": 18,
+      "base_damage": { "damage_type": "stab", "amount": 16 }
+    },
+		
         "restricts_gear" : [ "MOUTH" ]
     },{
         "type" : "mutation",
@@ -1378,7 +1430,8 @@
         "cancels" : ["BEAK", "BEAK_HUM", "BEAK_PECK", "PROBOSCIS", "MUZZLE", "MUZZLE_LONG", "MUZZLE_BEAR", "MUZZLE_RAT", "MUZZLE_SNAPPER", "MOUTH_TENTACLES", "MANDIBLES", "MUZZLE_RAPTOR", "MUZZLE_BEAST", "FLOWER_HEAD", "FANGS_SPIDER"],
         "prereqs" : ["SNOUT"],
         "changes_to" : ["MUZZLE_CHIMERA"],
-        "leads_to" : ["BOVINE_BODY"],		
+        "leads_to" : ["BOVINE_BODY"],	
+        "social_modifiers": { "intimidate": 15 },	
         "restricts_gear" : [ "MOUTH" ]
     },{	
         "type" : "mutation",
@@ -1415,6 +1468,13 @@
         "prereqs" : ["HORNS"],
         "cancels" : ["ANTENNAE", "HORNS_POINTED", "ANTLERS", "FLOWER_HEAD"],
         "restricts_gear" : [ "HEAD" ],
+        "attacks": {
+      "attack_text_u": "You headbutt %s with your curled horns",
+      "attack_text_npc": "%1$s headbutts %2$s with their curled horns",
+      "chance": 20,
+      "base_damage": { "damage_type": "bash", "amount": 14 }
+    },
+
         "allow_soft_gear" : true
     },{
       "type" : "mutation",
@@ -1447,6 +1507,13 @@
         "cancels" : ["ANTENNAE", "HORNS_CURLED", "ANTLERS", "FLOWER_HEAD"],
         "category" : ["MUTCAT_CHIMERA"],		
         "restricts_gear" : [ "HEAD" ],
+        "attacks": {
+      "attack_text_u": "You stab %s with your pointed horns",
+      "attack_text_npc": "%1$s stabs %2$s with their pointed horns",
+      "chance": 22,
+      "base_damage": { "damage_type": "stab", "amount": 24 }
+    },
+
         "allow_soft_gear" : true
 	},{
         "type" : "mutation",
@@ -1460,6 +1527,12 @@
         "prereqs" : ["HORNS"],
         "cancels" : ["ANTENNAE", "HORNS_CURLED", "HORNS_POINTED", "FLOWER_HEAD"],
         "restricts_gear" : [ "HEAD" ],
+        "attacks": {
+      "attack_text_u": "You butt %s with your antlers",
+      "attack_text_npc": "%1$s butts %2$s with their antlers",
+      "chance": 20,
+      "base_damage": { "damage_type": "bash", "amount": 4 }
+    },
         "allow_soft_gear" : true
     },{
         "type" : "mutation",
@@ -1483,6 +1556,12 @@
         "description" : "You have a pair of small horns on your head.  They allow you to make a weak piercing headbutt attack.",
         "prereqs" : ["HEADBUMPS"],
         "cancels" : ["ANTENNAE", "FLOWER_HEAD"],
+"attacks": {
+      "attack_text_u": "You headbutt %s with your horns",
+      "attack_text_npc": "%1$s headbutts %2$s with their horns",
+      "chance": 20,
+      "base_damage": [ { "damage_type": "stab", "amount": 3 }, { "damage_type": "bash", "amount": 3 } ]
+    },
         "changes_to" : ["HORNS_CURLED", "HORNS_POINTED", "ANTLERS"]
     },{
         "type" : "mutation",
@@ -1992,6 +2071,7 @@
         "cancels" : ["TAIL_FIN", "TAIL_THICK", "TAIL_FLUFFY_MOD", "TAIL_STING", "TAIL_CLUB", "TAIL_RAT", "TAIL_RAPTOR", "TAIL_RAPTOR_MOD", "TORTOISE_TAIL", "INSECT_STINGER", "WEB_SPINNER", "WEB_WEAVER", "WEB_RAPPEL", "WEB_ROPE"],
         "changes_to" : ["TAIL_CATTLE", "TAIL_FLUFFY"],		
         "restricts_gear" : [ "LEG_L", "LEG_R" ],
+        "dodge_modifier": 2,
         "allow_soft_gear" : true
     },{
         "type" : "mutation",
@@ -2004,6 +2084,7 @@
         "prereqs" : ["TAIL_LONG"],
         "cancels" : ["TAIL_FIN", "TAIL_FLUFFY", "TAIL_FLUFFY_MOD", "TAIL_THICK", "TAIL_STING", "TAIL_CLUB", "TAIL_RAT", "TAIL_RAPTOR", "TAIL_RAPTOR_MOD", "INSECT_STINGER", "TORTOISE_TAIL", "WEB_SPINNER", "WEB_WEAVER", "WEB_RAPPEL", "WEB_ROPE"],
         "restricts_gear" : [ "LEG_L", "LEG_R" ],
+        "dodge_modifier": 1,
         "allow_soft_gear" : true
     },{
         "type" : "mutation",
@@ -2016,6 +2097,7 @@
         "prereqs" : ["TAIL_LONG", "TAIL_STUB"],
         "cancels" : ["TAIL_FIN", "TAIL_FLUFFY", "TAIL_FLUFFY_MOD", "TAIL_THICK", "TAIL_STING", "TAIL_CLUB", "TAIL_CATTLE", "TAIL_LONG", "TAIL_RAPTOR", "TAIL_RAPTOR_MOD", "TORTOISE_TAIL", "INSECT_STINGER", "WEB_SPINNER", "WEB_WEAVER", "WEB_RAPPEL", "WEB_ROPE"],
         "restricts_gear" : [ "LEG_L", "LEG_R" ],
+        "dodge_modifier": 2,
         "allow_soft_gear" : true
     },{
         "type" : "mutation",
@@ -2029,6 +2111,13 @@
         "cancels" : ["TAIL_FIN", "TAIL_FLUFFY", "TAIL_FLUFFY_MOD", "TAIL_RAT", "TAIL_STING", "TAIL_CLUB", "TAIL_CATTLE", "TAIL_LONG", "TAIL_RAPTOR", "TAIL_RAPTOR_MOD", "TORTOISE_TAIL", "INSECT_STINGER", "WEB_SPINNER", "WEB_WEAVER", "WEB_RAPPEL", "WEB_ROPE"],
         "changes_to" : ["TAIL_CLUB"],
         "restricts_gear" : [ "LEG_L", "LEG_R" ],
+        "dodge_modifier": 2,
+        "attacks": {
+      "attack_text_u": "You whap %s with your tail",
+      "attack_text_npc": "%1$s whaps %2$s with their tail",
+      "chance": 20,
+      "base_damage": { "damage_type": "bash", "amount": 8 }
+    },
         "allow_soft_gear" : true
     },{
         "type" : "mutation",
@@ -2041,6 +2130,7 @@
         "prereqs" : ["TAIL_STUB"],
         "cancels" : ["TAIL_FIN", "TAIL_FLUFFY", "TAIL_FLUFFY_MOD", "TAIL_RAT", "TAIL_STING", "TAIL_CLUB", "TAIL_CATTLE", "TAIL_LONG", "TAIL_THICK", "TORTOISE_TAIL", "INSECT_STINGER", "WEB_SPINNER", "WEB_WEAVER", "WEB_RAPPEL", "WEB_ROPE"],
         "restricts_gear" : [ "LEG_L", "LEG_R" ],
+        "dodge_modifier": 3,
         "allow_soft_gear" : true
     },{
         "type" : "mutation",
@@ -2052,6 +2142,8 @@
         "prereqs" : ["TAIL_LONG"],
         "cancels" : ["TAIL_FIN", "TAIL_RAPTOR", "TAIL_RAPTOR_MOD", "TAIL_RAT", "TAIL_STING", "TAIL_CLUB", "TAIL_CATTLE", "TAIL_THICK", "TORTOISE_TAIL", "INSECT_STINGER", "WEB_SPINNER", "WEB_WEAVER", "WEB_RAPPEL", "WEB_ROPE"],
         "restricts_gear" : [ "LEG_L", "LEG_R" ],
+        "social_modifiers": { "lie": -20, "persuade": 10 },
+        "dodge_modifier": 4,
         "allow_soft_gear" : true
     },{	
         "type" : "mutation",
@@ -2080,6 +2172,12 @@
         "prereqs" : ["TAIL_THICK"],
         "cancels" : ["TAIL_FIN", "TAIL_RAPTOR", "TAIL_RAPTOR_MOD", "TAIL_RAT", "TAIL_STING", "TAIL_FLUFFY", "TAIL_CATTLE", "TAIL_LONG", "TORTOISE_TAIL", "INSECT_STINGER", "WEB_SPINNER", "WEB_WEAVER", "WEB_RAPPEL", "WEB_ROPE"],
         "restricts_gear" : [ "LEG_L", "LEG_R" ],
+        "attacks": {
+      "attack_text_u": "You club %s with your tail",
+      "attack_text_npc": "%1$s clubs %2$s with their tail",
+      "chance": 20,
+      "base_damage": { "damage_type": "bash", "amount": 18 }
+    },
         "allow_soft_gear" : true
     },{
         
@@ -2157,6 +2255,15 @@
         "cancels" : ["RAZOR_TEETH", "BEAK_HUM", "PROBOSCIS", "MOUTH_TENTACLES", "FANGS_SPIDER", "MANDIBLES", "MUZZLE", "MUZZLE_LONG", "MUZZLE_RAT", "MUZZLE_BEAR", "MUZZLE_CHIMERA", "MINOTAUR", "SABER_TEETH", "MUZZLE_SNAPPER", "MUZZLE_BEAST", "FLOWER_HEAD"],
         "prereqs" : ["BEAK"],
         "threshreq" : ["THRESH_BIRD"],
+"attacks": [
+      {
+        "attack_text_u": "You jackhammer into %s with your beak",
+        "attack_text_npc": "%1$s jackhammer into %2$s with their beak",
+        "body_part": "MOUTH",
+        "chance": 15,
+        "hardcoded_effect": true
+      }
+    ],
         "wet_protection" : [
             { "part" : "MOUTH", "ignored" : 2 }
         ],
@@ -2227,6 +2334,14 @@
             { "part" : "MOUTH", "ignored" : 1 }
         ],
         "restricts_gear" : [ "MOUTH" ],
+        "attacks": {
+      "attack_text_u": "You bite %s with your fangs",
+      "attack_text_npc": "%1$s bites %2$s with their fangs",
+      "blocker_mutations": [ "FANGS_SPIDER" ],
+      "body_part": "MOUTH",
+      "chance": 22,
+      "base_damage": { "damage_type": "cut", "amount": 12 }
+    },
         "destroys_gear" : true
     },{	
         "type" : "mutation",
@@ -2241,6 +2356,14 @@
         "prereqs2" : ["POISONOUS", "POISONOUS2"],
         "threshreq" : ["THRESH_SPIDER"],
         "category" : ["MUTCAT_SPIDER"],
+        "attacks": {
+      "attack_text_u": "You bite %s with your fangs",
+      "attack_text_npc": "%1$s bites %2$s with their fangs",
+      "blocker_mutations": [ "MANDIBLES" ],
+      "body_part": "MOUTH",
+      "chance": 22,
+      "base_damage": { "damage_type": "stab", "amount": 15 }
+    },
         "wet_protection" : [
             { "part" : "MOUTH", "ignored" : 1 }
         ]
@@ -2935,7 +3058,49 @@
         "ugliness" : 2,
         "description" : "Your teeth have grown into two-inch-long fangs, allowing you to make an extra attack when conditions favor it.",
         "cancels" : ["BEAK", "BEAK_HUM", "BEAK_PECK", "MANDIBLES", "FLOWER_HEAD", "FANGS_SPIDER", "PROBOSCIS"],
-        "changes_to" : ["SABER_TEETH", "RAZOR_TEETH"]
+    "attacks": [
+      {
+        "attack_text_u": "You sink your fangs into %s",
+        "attack_text_npc": "%1$s sinks their fangs into %2$s",
+        "blocker_mutations": [ "MUZZLE", "MUZZLE_LONG", "MUZZLE_RAT","MUZZLE_CHIMERA" ],
+        "body_part": "MOUTH",
+        "chance": 20,
+        "base_damage": { "damage_type": "stab", "amount": 20 }
+      },
+      {
+        "attack_text_u": "You sink your fangs into %s",
+        "attack_text_npc": "%1$s sinks their fangs into %2$s",
+        "required_mutations": [ "MUZZLE" ],
+        "body_part": "MOUTH",
+        "chance": 18,
+        "base_damage": { "damage_type": "stab", "amount": 20 }
+      },
+      {
+        "attack_text_u": "You sink your fangs into %s",
+        "attack_text_npc": "%1$s sinks their fangs into %2$s",
+        "required_mutations": [ "MUZZLE_LONG" ],
+        "body_part": "MOUTH",
+        "chance": 15,
+        "base_damage": { "damage_type": "stab", "amount": 20 }
+      },
+      {
+        "attack_text_u": "You sink your fangs into %s",
+        "attack_text_npc": "%1$s sinks their fangs into %2$s",
+        "required_mutations": [ "MUZZLE_RAT" ],
+        "body_part": "MOUTH",
+        "chance": 19,
+        "base_damage": { "damage_type": "stab", "amount": 20 }
+      },
+      {
+       "attack_text_u": "You bite and rend %s",
+       "attack_text_npc": "%1$s bites and rends %2$s",
+       "required_mutations": [ "MUZZLE_CHIMERA" ],
+       "body_part": "MOUTH",
+       "chance": 15,
+       "base_damage": { "damage_type": "stab", "amount": 25 }
+      }
+      ],
+        "changes_to" : [ "SABER_TEETH", "RAZOR_TEETH" ]
     },{	
         "type" : "mutation",
         "id" : "SABER_TEETH",
@@ -2949,6 +3114,15 @@
         "threshreq" : ["THRESH_FELINE", "THRESH_CHIMERA"],
         "cancels" : ["BEAK", "BEAK_HUM", "BEAK_PECK", "MANDIBLES", "RAZOR_TEETH", "FLOWER_HEAD", "FANGS_SPIDER", "PROBOSCIS"],
         "restricts_gear" : [ "MOUTH" ],
+        "social_modifiers": { "intimidate": 15 },
+    "attacks": {
+      "attack_text_u": "You tear into %s with your saber teeth",
+      "attack_text_npc": "%1$s tears into %2$s with their saber teeth",
+      "body_part": "MOUTH",
+      "chance": 20,
+      "base_damage": { "damage_type": "stab", "amount": 25 },
+      "strength_damage": { "damage_type": "stab", "amount": 1 }
+    },
         "destroys_gear" : true		
     },{
 
