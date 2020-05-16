@@ -18,7 +18,7 @@
         "iv_min_mutations" : 2,
         "iv_additional_mutations" : 2,
         "iv_additional_mutations_chance" : 4,
-        "iv_hunger" : 20, "//" : "Chimera is all about the massive morphological changes done quick, so lots of nutrition needed!",
+        "iv_hunger" : 20,
         "iv_thirst" : 20,
         "iv_pain" : 4,
         "iv_fatigue" : 20,
